@@ -65,11 +65,6 @@ class ContaController extends Controller
 
     public function telefone(Request $request)
     {
-        /* $telefone = Telefone::create([
-            'user_id' => $request->user_id,
-            'tipo_id' => $request->tipo_id,
-            'numero' => $request->numero
-        ]); */
         $telefone = new Telefone();
         $telefone->user_id = Auth::user()->id;
         $telefone->tipo_id = $request->tipo_id;

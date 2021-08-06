@@ -101,6 +101,8 @@ Route::get('rdestroy/{id}', [ReceberController::class, 'destroy']);
 Route::resource('favorito', ItemfavoritoController::class);
 Route::get('fdestroy/{id}', [ItemfavoritoController::class, 'destroy']);
 
-Route::view('processo', 'livewire.app');
+Route::middleware(['auth'])->group(function () {
+    Route::view('processo', 'livewire.app');
+});
 
 require __DIR__ . '/auth.php';

@@ -4,6 +4,7 @@ use App\Http\Controllers\AumentarestoqueController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\CarrinhaController;
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ContaController;
 use App\Http\Controllers\ContactosController;
 use App\Http\Controllers\DashboardController;
@@ -104,5 +105,7 @@ Route::get('fdestroy/{id}', [ItemfavoritoController::class, 'destroy']);
 Route::middleware(['auth'])->group(function () {
     Route::view('processo', 'livewire.app');
 });
+
+Route::resource('cliente', ClienteController::class);
 
 require __DIR__ . '/auth.php';

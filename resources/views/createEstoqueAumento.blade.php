@@ -31,7 +31,7 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <input type="text" hidden name="utilizador_id" value="{{ Auth::user()->id }}">
+                                    <input type="text" hidden name="user_id" value="{{ Auth::user()->id }}">
 
                                     <div class="col-md-6 col-sm-12 col-lg-6">
                                         <!-- <input type="number" name="quantidade" placeholder="Quantidade"> -->

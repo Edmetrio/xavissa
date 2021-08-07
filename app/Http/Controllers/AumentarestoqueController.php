@@ -43,7 +43,7 @@ class AumentarestoqueController extends Controller
         $quantTotal = $estoque->quantidade + $request->quantidade;
         $aestoque = Aumentarestoque::create([
             'produto_id' => $request->produto_id,
-            'utilizador_id' => $request->utilizador_id,
+            'user_id' => $request->user_id,
             'quantidade' => $request->quantidade
         ]);
         if ($aestoque) {

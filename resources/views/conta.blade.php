@@ -9,7 +9,7 @@
                     <h3 class="title-3">Minha Conta</h3>
                     <ul>
                         <li><a href="{{url('/')}}">Início</a></li>
-                        <li>Mina Conta</li>
+                        <li>Minha Conta</li>
                     </ul>
                 </div>
             </div>
@@ -148,7 +148,7 @@
                                                     <p>Mobile: (123) 456-7890</p> -->
                                                 @endforeach
                                         </address>
-                                        <a href="#" class="btn obrien-button-2 primary-color rounded-0"><i class="fa fa-edit mr-2"></i>Edit Address</a>
+                                        <!-- <a href="#address-edit" class="btn obrien-button-2 primary-color rounded-0"><i class="fa fa-edit mr-2"></i>Edit Address</a> -->
                                     </div>
                                 </div>
                                 <!-- Single Tab Content End -->

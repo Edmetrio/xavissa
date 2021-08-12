@@ -269,7 +269,7 @@
                     </li>
                     <li class="menu-item-has-children"><a href="#" title=""><i class="icon ion-ios-briefcase"></i><span>Cliente</span></a>
                         <ul class="children">
-                            <li><a href="{{url('base')}}" title="">Listar</a></li>
+                            <li><a href="{{url('cliente')}}" title="">Listar</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children"><a href="#" title=""><i class="icon ion-ios-briefcase"></i><span>Estoque</span></a>
@@ -302,7 +302,7 @@
         </header><!-- Header -->
         @yield('content')
         <footer>
-            <p>Copyright <a href="#" title="">MJayServiços</a> &copy; 2021</p>
+            <p>Copyright <a href="#" title="">First Tech</a> &copy; 2021</p>
             <ul class="btm-lnks">
                 <li><a href="#" title="">Dashboard</a></li>
                 <li><a href="#" title="">Definições</a></li>

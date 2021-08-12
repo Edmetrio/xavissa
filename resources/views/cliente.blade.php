@@ -21,26 +21,26 @@
                         <h4>Produtos</h4>
                         <p>Todos produtos na sua Loja</p>
                     </div>
-                            <div class="col-md-4 col-sm-6 col-lg-12">
-                                            <h4>Contextual Classes Table</h4>
-                                            <table class="table">
-                                                <thead>
-                                                       <tr>
-                                                        <th scope="col">Nome</th>
-                                                        <th scope="col">E-mail</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    @foreach($cliente as $c)
+                    <div class="col-md-4 col-sm-6 col-lg-12">
+                        <h4>Contextual Classes Table</h4>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">E-mail</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($cliente as $c)
 
-                                                    <tr class="table-active">
-                                                        <td>{{$c->name}}</td>
-                                                        <td>{{$c->email}}</td>
-                                                    </tr>
-                                                    @endforeach
-                                                </tbody>
-                                            </table>
-                            </div>
+                                <tr class="table-active">
+                                    <td>{{$c->name}}</td>
+                                    <td>{{$c->email}}</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

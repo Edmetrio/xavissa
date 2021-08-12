@@ -43,7 +43,9 @@ class DashboardController extends Controller
             ->where('categoria.visivel', 'on')
             ->select('produto.*', 'itemfavorito.estado as estado')
             ->get(); */
-            $produto = Produto::where('visivel', 'on')->get();
+            $produto = Produto::where('visivel', 'on')->latest()->get();
+            
+            
         $categoria = Categoria::where('visivel', 'on')->get();
         return view('inicio', compact('produto', 'item', 't', 'numero', 'categoria'));
         }
@@ -68,8 +70,9 @@ class DashboardController extends Controller
                 ->where('categoria.visivel', 'on')
                 ->select('produto.*', 'itemfavorito.estado as estado')
                 ->get(); */
-                $produto = Produto::where('visivel', 'on')->get();
-            $categoria = Categoria::where('visivel', 'on')->get();
+                $produto = Produto::where('visivel', 'on')->latest()->get();
+                /* dd($produto); */
+            $categoria = Categoria::where('visivel', 'on')->latest()->get();
             return view('inicio', compact('produto', 'item', 't', 'numero', 'categoria'));
         }
     }

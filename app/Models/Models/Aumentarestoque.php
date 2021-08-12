@@ -16,5 +16,5 @@ class Aumentarestoque extends Model
     protected $primaryKey = 'id';
 
     protected $table = 'aumentarestoque';
-    protected $fillable = ['produto_id','utilizador_id','quantidade'];
+    protected $fillable = ['produto_id','user_id','quantidade'];
 }

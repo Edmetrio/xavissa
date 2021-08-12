@@ -70,8 +70,7 @@ class DashboardController extends Controller
                 ->where('categoria.visivel', 'on')
                 ->select('produto.*', 'itemfavorito.estado as estado')
                 ->get(); */
-                $produto = Produto::where('visivel', 'on')->latest()->get();
-                /* dd($produto); */
+                $produto = Produto::where('visivel', 'on')->latest()->paginate(9)->get();
             $categoria = Categoria::where('visivel', 'on')->latest()->get();
             return view('inicio', compact('produto', 'item', 't', 'numero', 'categoria'));
         }

@@ -23,6 +23,7 @@ class CreateProdutosTable extends Migration
             $table->String('descricao');
             $table->string('destacado')->default(0)->nullable();
             $table->string('visivel')->default(1)->nullable();
+            $table->timestamps();
         });
     }
 

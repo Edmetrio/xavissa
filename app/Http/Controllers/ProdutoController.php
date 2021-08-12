@@ -157,7 +157,9 @@ class ProdutoController extends Controller
                 ->where('produto.visivel', 'on')
                 ->where('categoria.visivel', 'on')
                 ->select('produto.*')
+               
                 ->get();
+                /* dd($produto); */
 
             $cat = Categoria::find($id);
             $categoria = Categoria::where('visivel', 'on')->get();
@@ -183,7 +185,9 @@ class ProdutoController extends Controller
                 ->where('produto.visivel', 'on')
                 ->where('categoria.visivel', 'on')
                 ->select('produto.*')
+              
                 ->get();
+
 
             $cat = Categoria::find($id);
             $categoria = Categoria::where('visivel', 'on')->get();

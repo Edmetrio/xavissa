@@ -86,18 +86,17 @@
                         <div class="col-lg-2 col-xl-3 col-sm-6 col-6 col-custom">
                             <div class="header-right-area main-nav">
                                 <ul class="nav">
-                                    <li class="login-register-wrap d-none d-xl-flex">
-                                        <!-- <span><a href="{{url('login')}}">Entrar</a></span> -->
-                                        <!-- <span><a href="{{url('register')}}">Registrar</a></span> -->
+                                <li class="login-register-wrap d-none d-xl-flex">
                                         @if (Route::has('login'))
                                         @auth
-                                        <span>
+                                        <!-- <span>
                                             <div>{{ Auth::user()->name }}</div>
-                                        </span>
+                                        </span> -->
                                         <span>
                                     <li class="sidemenu-wrap d-none d-lg-flex">
                                         <a href="#">Minha Conta <i class="fa fa-caret-down"></i> </a>
                                         <ul class="dropdown-sidemenu dropdown-hover-2 dropdown-language">
+                                            <li><a href="{{url('conta')}}"><i class="ion-ios-contact" style="padding: 10px;"></i>{{ Auth::user()->name }}</a></li>
                                             <li><a href="{{url('conta')}}"><i class="ion-android-person" style="padding: 10px;"></i>Perfil</a></li>
                                             <li><a href="{{url('historico')}}"><i class="ion-clipboard" style="padding: 10px;"></i>Histórico de Compras</a></li>
                                             <li>
@@ -114,17 +113,17 @@
                                         </ul>
                                     </li>
                                     </span>
-                                        @else
-                                        <span>
-                                            <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Entrar</a>
-                                        </span>
-                                        @if (Route::has('register'))
-                                        <span>
-                                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Registrar</a>
-                                        </span>
-                                        @endif
-                                        @endauth
-                                        @endif
+                                    @else
+                                    <span>
+                                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Entrar</a>
+                                    </span>
+                                    @if (Route::has('register'))
+                                    <span>
+                                        <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Registrar</a>
+                                    </span>
+                                    @endif
+                                    @endauth
+                                    @endif
                                     </li>
                                     <li class="minicart-wrap">
                                         <a href="{{url('/carrinha')}}" class="minicart-btn toolbar-btn">

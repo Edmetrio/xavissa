@@ -88,13 +88,14 @@
                                     <li class="login-register-wrap d-none d-xl-flex">
                                         @if (Route::has('login'))
                                         @auth
-                                        <span>
+                                        <!-- <span>
                                             <div>{{ Auth::user()->name }}</div>
-                                        </span>
+                                        </span> -->
                                         <span>
                                     <li class="sidemenu-wrap d-none d-lg-flex">
                                         <a href="#">Minha Conta <i class="fa fa-caret-down"></i> </a>
                                         <ul class="dropdown-sidemenu dropdown-hover-2 dropdown-language">
+                                            <li><a href="{{url('conta')}}"><i class="ion-ios-contact" style="padding: 10px;"></i>{{ Auth::user()->name }}</a></li>
                                             <li><a href="{{url('conta')}}"><i class="ion-android-person" style="padding: 10px;"></i>Perfil</a></li>
                                             <li><a href="{{url('historico')}}"><i class="ion-clipboard" style="padding: 10px;"></i>Histórico de Compras</a></li>
                                             <li>

@@ -86,8 +86,9 @@ class CategoriaController extends Controller
         $nome = $request->file('image')->getClientOriginalName();
 
         $NovoNome = $request->nome . '.' . $request->image->extension();
-
-        $request->image->move(public_path('assets/images/slider'), $NovoNome);
+        $destino = 'assets/images/slider';
+        
+        $request->image->move($destino, $NovoNome);;
         $categoria = Categoria::create([
             'nome' => $request->nome,
             'icon' => $NovoNome

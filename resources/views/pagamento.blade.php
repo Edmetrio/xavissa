@@ -1,4 +1,4 @@
-@extends('header5')
+@extends('headerPagamento')
 
 @section('content')
 
@@ -27,87 +27,23 @@
                     <h3>Pagammento Via Cartão de Crédito/Débito <span id="showlogin">Clica aqui</span></h3>
                     <div id="checkout-login" class="coupon-content">
                         <div class="coupon-info">
-                            <form method="post" action="{{url('encomenda')}}">
+                            <!-- <form method="post" action="{{url('encomenda')}}"> -->
                                 @csrf
                                 <div class="checkbox-form">
                                     <h3>Detalhes de Pagamento</h3>
                                     <div class="row">
                                     <div class="col-md-6">
-                                            <div class="checkout-form-list">
-                                                <label>Nome Completo</label>
-                                                <input placeholder="Samuel Sibia" type="text">
-                                            </div>
-                                        </div>
                                     <div class="col-md-6">
-                                            <div class="checkout-form-list">
-                                                <label>Telefone</label>
-                                                <input placeholder="84 000 0000" type="text">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="checkout-form-list">
-                                                <label>Endereço</label>
-                                                <input placeholder="Av. Julius Nyerere" type="text">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="checkout-form-list">
-                                                <label>Titular</label>
-                                                <input placeholder="Samuel Sibia" type="text">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="checkout-form-list">
-                                                <label>Número da Conta</label>
-                                                <input placeholder="000000000000" type="text">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="checkout-form-list">
-                                                <label>Mês <span class="required">*</span></label>
-                                                <select class="myniceselect nice-select wide rounded-0">
-                                                    <option data-display="Mês">Mês</option>
-                                                    <option value="uk">Janeiro</option>
-                                                    <option value="rou">Fevereiro</option>
-                                                    <option value="fr">Março</option>
-                                                    <option value="de">Abril</option>
-                                                    <option value="aus">Maio</option>
-                                                    <option value="uk">Junho</option>
-                                                    <option value="rou">Julho</option>
-                                                    <option value="fr">Agosto</option>
-                                                    <option value="de">Setembro</option>
-                                                    <option value="aus">Outubro</option>
-                                                    <option value="de">Novembro</option>
-                                                    <option value="aus">Dezembro</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="checkout-form-list">
-                                                <label>Ano <span class="required">*</span></label>
-                                                <select class="myniceselect nice-select wide rounded-0">
-                                                    <option data-display="Ano">Ano</option>
-                                                    <option value="uk">2021</option>
-                                                    <option value="rou">2022</option>
-                                                    <option value="fr">2023</option>
-                                                    <option value="rou">2024</option>
-                                                    <option value="fr">2025</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2 col-8">
-                                            <div class="checkout-form-list">
-                                                <label>Código CVV <span class="required">*</span></label>
-                                                <input placeholder="3 ou 4 dígitos" type="password">
-                                            </div>
-                                        </div>
+                                         
                                     </div>
                                     <div class="your-order-table table-responsive">
                                         <table class="table">
                                             <thead>
                                                 <tr>
                                                     <th class="cart-product-name">Produtos</th>
-                                                    <th class="cart-product-total">Quantidade - Preço</th>
+                                                    <th class="cart-product-name">Icon</th>
+                                                    <th class="cart-product-total">Quantidade</th>
+                                                    <th class="cart-product-total">Preço</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -115,9 +51,11 @@
                                                 <tr class="cart_item">
                                                     <td class="cart-product-name"> {{$p->nome}}<strong class="product-quantity">
                                                         </strong></td>
+                                                    <td><img class="img-fluid" src="assets/images/product/{{$p->icon}}" alt="Product" style="width: 40px;" /></td>
                                                     <td class="cart-product-total text-center"><span class="amount"><strong class="product-quantity">
-                                                                {{$p->quantidade}}</strong> * $ {{$p->preco}},00 </span></td>
-                                                </tr>
+                                                                {{$p->quantidade}}</strong> </span></td>
+                                                    <td class="cart-product-total text-center">$ {{$p->preco}},00</td>
+                                                    </tr>
                                                 @endforeach
                                             </tbody>
                                             <tfoot>
@@ -137,11 +75,12 @@
                                             <input type="text" hidden name="valor_total" value="{{$t}}.00">
                                             <input type="text" hidden name="utilizador_id" value="{{ Auth::user()->id}}">
                                             <input type="text" hidden name="estado" value="Pendente">
-                                            <button class="btn obrien-button primary-btn d-block">Pagar</button>
+                                            <button onclick="visaLightBox('{{$t}}.00', 'TEST_TR005', 'KM-CLIENT', '222');" 
+                                            class="btn obrien-button primary-btn d-block">Pagar</button>
                                         </div>
                                     </div>
                                 </div>
-                            </form>
+                            <!-- </form> -->
                         </div>
                     </div>
                 </div>

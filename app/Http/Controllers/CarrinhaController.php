@@ -29,9 +29,11 @@ class CarrinhaController extends Controller
                 $p->valor_total = $p->preco * $p->quantidade;
                 $total += $p->valor_total;
             }
-                $t = $total;
+                $t =  number_format($total,2,',','.');
+                $m = $total * 64;
+                $metical = number_format($m,2,',','.');
         $categoria = Categoria::where('visivel', 'on')->get();
-        return view('carrinha', compact('produto','t', 'categoria'));
+        return view('carrinha', compact('produto','t', 'categoria','metical'));
     }
 
     /**

@@ -54,28 +54,32 @@
                                                     <td><img class="img-fluid" src="assets/images/product/{{$p->icon}}" alt="Product" style="width: 40px;" /></td>
                                                     <td class="cart-product-total text-center"><span class="amount"><strong class="product-quantity">
                                                                 {{$p->quantidade}}</strong> </span></td>
-                                                    <td class="cart-product-total text-center">$ {{$p->preco}},00</td>
+                                                    <td class="cart-product-total text-center">$ {{$p->preco}}</td>
                                                     </tr>
                                                 @endforeach
                                             </tbody>
                                             <tfoot>
                                                 <tr class="cart-subtotal">
                                                     <th>Subtotal na Carrinha</th>
-                                                    <td class="text-center"><span class="amount">$ {{$t}},00</span></td>
+                                                    <td class="text-center"><span class="amount">$ {{$t}}</span></td>
                                                 </tr>
                                                 <tr class="order-total">
                                                     <th>Total</th>
-                                                    <td class="text-center"><strong><span class="amount">$ {{$t}},00</span></strong></td>
+                                                    <td class="text-center"><strong><span class="amount">$ {{$t}}</span></strong></td>
+                                                </tr>
+                                                <tr class="order-total">
+                                                    <th>Total em Metical</th>
+                                                    <td class="text-center"><strong><span class="amount">{{$metical}} MT</span></strong></td>
                                                 </tr>
                                             </tfoot>
                                         </table>
                                     </div>
                                     <div class="different-address">
                                         <div class="order-button-payment">
-                                            <input type="text" hidden name="valor_total" value="{{$t}}.00">
+                                            <input type="text" hidden name="valor_total" value="{{$t}}">
                                             <input type="text" hidden name="utilizador_id" value="{{ Auth::user()->id}}">
                                             <input type="text" hidden name="estado" value="Pendente">
-                                            <button onclick="visaLightBox('{{$t}}.00', 'TEST_TR005', 'KM-CLIENT', '222');" 
+                                            <button onclick="visaLightBox('{{$m}}', 'TEST_TR005', 'KM-CLIENT', '222');" 
                                             class="btn obrien-button primary-btn d-block">Pagar</button>
                                         </div>
                                     </div>

@@ -92,11 +92,15 @@
                                         <table class="table">
                                             <tr>
                                                 <td>Sub Total</td>
-                                                <td>$ {{$t}},00</td>
+                                                <td>$ {{$t}}</td>
                                             </tr>
                                             <tr class="total">
                                                 <td>Total</td>
-                                                <td class="total-amount">$ {{$t}},00</td>
+                                                <td class="total-amount">$ {{$t}}</td>
+                                            </tr>
+                                            <tr class="total">
+                                                <td>Total em Metical</td>
+                                                <td class="total-amount">{{$metical}} MT</td>
                                             </tr>
                                         </table>
                                     </div>

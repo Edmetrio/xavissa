@@ -36,13 +36,6 @@ class DashboardController extends Controller
             $total += $p->valor_total;
         }
         $t = $total;
-        /* $produto = DB::table('produto')
-            ->join('categoria', 'produto.categoria_id', 'categoria.id')
-            ->join('itemfavorito', 'itemfavorito.produto_id', 'produto.id')
-            ->where('produto.visivel', 'on')
-            ->where('categoria.visivel', 'on')
-            ->select('produto.*', 'itemfavorito.estado as estado')
-            ->get(); */
             $produto = Produto::where('visivel', 'on')->latest()->get();
             
             
@@ -63,7 +56,6 @@ class DashboardController extends Controller
                 $total += $p->valor_total;
             }
             $t = $total;
-         
                 $produto = Produto::where('visivel', 'on')->latest()->get();
             $categoria = Categoria::where('visivel', 'on')->latest()->get();
             return view('inicio', compact('produto', 'item', 't', 'numero', 'categoria'));
